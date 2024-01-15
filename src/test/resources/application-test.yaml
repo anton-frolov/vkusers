@@ -1,0 +1,30 @@
+spring:
+  test:
+    database:
+      replace: none
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./db/data/demodb
+
+  flyway:
+    url: jdbc:h2:file:./db/data/demodb
+    locations: classpath:/db/migration
+    user: sa
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+app:
+  processing:
+    threadCount: 3
+    appId: 111
+    accessToken: ttttt
+    timeout: 300
+    batchSize: 2000
+  export:
+    path: .
+    fileName: export.xls
+

@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./db/data/demodb
+    username: sa
+  flyway:
+    url: jdbc:h2:file:./db/data/demodb
+    user: sa
+    locations: classpath:/db/migration
+
+app:
+  processing:
+    threadCount: 3
+    appId:
+    accessToken:
+    timeout: 300
+    batchSize: 2000
+  export:
+    path: .
+    fileName: export.xls
